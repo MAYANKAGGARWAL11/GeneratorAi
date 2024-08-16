@@ -7,10 +7,10 @@ function Dashboard() {
   return (
     <div>
         {/* search section */}
-          <SerchSection onSerchInput={(value: string) => setserchinput(value)} />
+          <SearchSection    handleSearchChange={(value: string) => setUserSearchInput(value)} />
 
         {/* teplate list section */}
-          <TemplateList serchinput={userSearchInput} />
+          <TemplateListSection searchInputResult={userSearchInput} />
     </div>
   )
 }
