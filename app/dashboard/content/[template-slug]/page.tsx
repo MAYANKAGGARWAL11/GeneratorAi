@@ -61,14 +61,18 @@ function CreateNewContent(props: PROPS) {
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-5">
         {/* FormSection */}
+          {selectedTemplate ? (
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => GenerateAIContent(v)}
           loading={loading}
         />
+      ) : (
+        <div>Template not found</div> // You can customize this message or handle it differently
+      )}
         {/* OutputSection */}
         <div className="col-span-2">
-          <OutputSection aiOutput={aiOutput} />
+          <OutputSection aiOutput={aiOutput ?? ""} />
         </div>
       </div>
     </div>
